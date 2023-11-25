@@ -3,7 +3,7 @@ pixepon475@notedns.com
 123@@
 
 
-"
+"A* algorithme A to F with H_Table
 graph = {
     'A': [('B', 1), ('C', 4)],
     'B': [('D', 3), ('E', 2)],
