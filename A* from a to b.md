@@ -1,6 +1,6 @@
 # me
-kafij83199@gosarlar.com
-Dex1230562001
+sfyn.ochy@gmail.com
+New12305620001
 
 
 "A* algorithme A to F with H_Table
