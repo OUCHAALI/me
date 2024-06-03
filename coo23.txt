@@ -1,0 +1,61 @@
+1) use RESTO;
+2) db.createCollection("restaurant");
+3) mongoimport --host localhost:27017 --db resto --collection restaurant --type json --file restaurant.json;
+4) db.restaurant.count();
+5) db.restaurant.find();
+6) db.restaurant.find({},{"restaurant_id" : 1,"name":1,"borough":1,"cuisine" :1});
+7) db.restaurant.find({},{"restaurant_id" : 1,"name":1,"borough":1,"cuisine" :1,"_id":0});
+8) db.restaurant.find({},{"restaurant_id" : 1,"name":1,"borough":1,"address.zipcode" :1,"_id":0});
+9) db.restaurant.find({"borough": "Bronx"});
+10) db.restaurant.find({"borough": "Bronx"}).limit(5);
+11) db.restaurant.find({"borough": "Bronx"}).skip(5).limit(5);
+12) db.restaurant.find({grades : { $elemMatch:{"score":{$gt : 90}}}});
+13) db.restaurant.find({grades : { $elemMatch:{"score":{$gt : 80 , $lt :100}}}});
+14) db.restaurant.find({"address.coord" : {$lt : -95.754168}});
+15) db.restaurant.find({"cuisine" : {$ne : "American "}, "grades.score" :{$gt: 70}, "address.coord" : {$lt : -65.754168}});
+
+
+
+
+
+
+1. use RESTO
+
+2. db.createCollection("restaurant");
+
+3. mongoimport --host localhost:27017 --db RESTO --collection restaurant --type json --file "E:\restaurants.json"
+
+4. 1er méthode:
+db.restaurant.count();   
+On aura comme resultat: 3772 (le nombre des documents dans notre fichier)
+   2ème méthode:
+db.restaurant.find().limit(5);
+On affiche les cinq premiers documents.
+
+5. db.restaurant.find();
+
+6. db.restaurant.find({"grades.score": {$gt : 80}});
+
+7. db.restaurant.find({borough: "Manhattan","grades.grade": "A"});
+
+8. db.restaurant.find({$or : [{cuisine: "Italian"},{"cuisine": "French"}]});
+
+9. db.restaurant.find({$or : [{"address.zipcode": "10021"},{"address.zipcode": "10022"}]});
+
+10. db.restaurant.find({"grades.score": {$gt : 90}, borough: "Brooklyn", cuisine: "Pizza" });
+
+11. db.restaurant.find({"grades.grade":"A","name":/^Sushi/})
+
+12. db.restaurant.find({}).sort({name : 1}).limit(10);
+
+13. db.restaurant.find({$and : [{ borough: {$ne : "Brooklyn"}},{borough: {$ne : "Queens"}}, {borough: {$ne : "Bronx"}}]});
+
+14. db.restaurant.find({"name":/^B.*r$/})
+
+15. db.restaurant.find({"address.coord": [ -73.856077, 40.848447 ]});
+
+
+
+
+
+
