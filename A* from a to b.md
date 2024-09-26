@@ -1,6 +1,5 @@
 # me
-sfyn.ochy@gmail.com
-New12305620001
+
 
 
 "A* algorithme A to F with H_Table
